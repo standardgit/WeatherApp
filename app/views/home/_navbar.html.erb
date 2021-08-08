@@ -11,10 +11,12 @@
           <a class="nav-link" href="#">Link</a>
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <%= form_tag zipcode_path, :method => 'POST' do %>
+        <div class="d-flex">
+        <%= text_field_tag 'zipcode', nil, placeholder: "Search Zipcode", class:"form-control me-2" %>
+        <%= submit_tag 'search', class: "btn btn-outline-success" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </nav>
